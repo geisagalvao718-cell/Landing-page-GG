@@ -34,12 +34,15 @@ main {
 .texto1 {
     color: #D4A017;
     font-family: "Comfortaa", sans-serif;
+    font-size: 25px;
+    text-align: center;
   }
 
 .texto {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    line-height: 50px;
+    line-height: 0.5;
+    font-size: 15px
 }
 .botao {
     display: inline-block;
