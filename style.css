@@ -17,93 +17,94 @@ body {
     min-height: 100vh; 
     margin: 0;
     background-color: rgba(0, 0, 0, 0.7);
+    
+    /* Centraliza a landing page inteira no meio de telas grandes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o footer para o rodapé */
+    align-items: center;
+}
+
+/* Container principal que limita a largura para parecer um celular mesmo no PC */
+.container-landing {
+    width: 100%;
+    max-width: 480px; /* Largura máxima ideal para formato Instagram */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço vertical disponível */
 }
 
 header {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Foto e textos empilhados */
     align-items: center;
-    margin: 25px;
+    margin: 30px 0 20px 0;
+    width: 100%;
 }
 
 .imagem {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
     border-radius: 50%;
     object-fit: cover;
-    display: flex;
+    border: 3px solid #D4A017; /* Borda elegante estilo stories do Instagram */
+    margin-bottom: 15px;
 }
 
 main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-direction: column; /* Garante que os textos fiquem um abaixo do outro */
     width: 100%;
-    padding: 0 20px; /* Evita que o texto encoste nas bordas da tela */
+    gap: 15px; /* Espaçamento padrão entre os elementos */
 }
 
 .texto1 {
     color: #D4A017;
     font-family: "Comfortaa", sans-serif;
-    font-size: clamp(1rem, 3.5vw, 1.375rem); /* Aumentado o mínimo para celular */
+    /* Letra adaptável: nunca menor que 16px, escala com a tela */
+    font-size: clamp(1rem, 4vw, 1.25rem); 
     text-align: center;
-    margin-bottom: 15px;
     width: 100%;
 }
 
 .texto {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #FFFFFF; /* Adicionado branco para dar contraste com o fundo escuro */
     text-align: center;
-    line-height: 1.6;
-    font-size: clamp(1rem, 3.5vw, 1.5rem); /* Aumentado o mínimo para celular */
+    line-height: 1.5;
+    font-size: clamp(0.9rem, 3.5vw, 1.05rem);
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .botao {
     background: #D4A017;
     color: #111111;
-    text-decoration: none;
-    padding: 15px 35px;
+    padding: 16px 20px;
     border-radius: 50px;
-    font-size: clamp(1.1rem, 4vw, 1.375rem);
+    font-size: clamp(1rem, 3.8vw, 1.15rem);
     font-weight: bold;
     border: 2px solid #D4A017;
     transition: all 0.3s ease;
     display: block;
-    width: 250px; /* Tamanho fixo padrão para telas grandes */
+    width: 100%; /* Ocupa a largura máxima do container (com margens) */
     text-align: center;
-    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para destacar o clique */
+}
+
+.botao:hover {
+    background: transparent;
+    color: #D4A017;
+    transform: scale(1.02); /* Efeito suave ao passar o mouse */
 }
 
 footer {
     text-align: center;
-    line-height: 50px;
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
-    margin-top: 40px;
-}
-
-/* ==========================================================================
-   REGRAS EXCLUSIVAS PARA CELULAR (Telas de até 768px de largura)
-   ========================================================================== */
-@media (max-width: 768px) {
-    header {
-        margin: 15px; /* Diminui a margem do topo no celular */
-    }
-
-    .imagem {
-        width: 80px; /* Reduz um pouco o tamanho da foto no celular */
-        height: 80px;
-    }
-
-    main {
-        padding: 0 15px; /* Margem interna nas laterais da tela */
-    }
-
-    .botao {
-        width: 90%; /* O botão deixa de ser fixo e se estica na tela do celular */
-        max-width: 320px; /* Impede o botão de ficar exageradamente largo em celulares grandes */
-        padding: 18px 20px; /* Aumenta a área de toque no celular */
-    }
+    padding: 20px 0;
+    font-size: clamp(0.75rem, 3vw, 0.85rem);
+    color: rgba(255, 255, 255, 0.6);
+    width: 100%;
 }
