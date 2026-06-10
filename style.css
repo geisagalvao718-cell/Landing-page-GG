@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Oswald:wght@200..700&display=swap');
+@import url('https://googleapis.com');
 
 * {
   margin: 0;
@@ -9,7 +9,7 @@
 
 body {
     font-size: 100%;
-    background-image: url('Fundo site.png'); /* Corrigido: aspas para evitar erros no caminho */
+    background-image: url('Fundo site.png');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -38,23 +38,27 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* alignment-baseline foi removido por não ser válido em layouts flexbox comuns */
+    flex-direction: column; /* Garante que os textos fiquem um abaixo do outro */
+    width: 100%;
+    padding: 0 20px; /* Evita que o texto encoste nas bordas da tela */
 }
 
 .texto1 {
     color: #D4A017;
     font-family: "Comfortaa", sans-serif;
-    /* Ajuste Fluido: Mínimo 14px, Ideal 3.5% da tela, Máximo 22px */
-    font-size: clamp(0.875rem, 3.5vw, 1.375rem);
+    font-size: clamp(1rem, 3.5vw, 1.375rem); /* Aumentado o mínimo para celular */
     text-align: center;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 .texto {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    line-height: 1.6; /* Alterado para valor relativo para acompanhar o tamanho da letra */
-    /* Ajuste Fluido: Mínimo 14px, Ideal 3.5% da tela, Máximo 24px */
-    font-size: clamp(0.875rem, 3.5vw, 1.5rem);
+    line-height: 1.6;
+    font-size: clamp(1rem, 3.5vw, 1.5rem); /* Aumentado o mínimo para celular */
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 .botao {
@@ -63,19 +67,43 @@ main {
     text-decoration: none;
     padding: 15px 35px;
     border-radius: 50px;
-    /* Ajuste Fluido: Mínimo 16px, Ideal 4% da tela, Máximo 22px */
-    font-size: clamp(1rem, 4vw, 1.375rem);
+    font-size: clamp(1.1rem, 4vw, 1.375rem);
     font-weight: bold;
     border: 2px solid #D4A017;
     transition: all 0.3s ease;
     display: block;
-    width: 250px;
+    width: 250px; /* Tamanho fixo padrão para telas grandes */
+    text-align: center;
     margin: 0 auto;
 }
 
 footer {
     text-align: center;
     line-height: 50px;
-    /* Ajuste Fluido: Mínimo 12px, Ideal 2.5% da tela, Máximo 16px */
-    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   REGRAS EXCLUSIVAS PARA CELULAR (Telas de até 768px de largura)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        margin: 15px; /* Diminui a margem do topo no celular */
+    }
+
+    .imagem {
+        width: 80px; /* Reduz um pouco o tamanho da foto no celular */
+        height: 80px;
+    }
+
+    main {
+        padding: 0 15px; /* Margem interna nas laterais da tela */
+    }
+
+    .botao {
+        width: 90%; /* O botão deixa de ser fixo e se estica na tela do celular */
+        max-width: 320px; /* Impede o botão de ficar exageradamente largo em celulares grandes */
+        padding: 18px 20px; /* Aumenta a área de toque no celular */
+    }
 }
