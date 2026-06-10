@@ -65,7 +65,7 @@ main {
     color: #D4A017;
     font-family: "Comfortaa", sans-serif;
     /* Letra adaptável: nunca menor que 16px, escala com a tela */
-    font-size: clamp(1rem, 4vw, 1.25rem); 
+    font-size: 25px; 
     text-align: center;
     width: 100%;
 }
