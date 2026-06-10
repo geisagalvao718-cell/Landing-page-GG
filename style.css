@@ -9,59 +9,73 @@
 
 body {
     font-size: 100%;
-    background: whitesmoke;
+    background-image: url('Fundo site.png'); /* Corrigido: aspas para evitar erros no caminho */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    min-height: 100vh; 
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.7);
 }
-header{
+
+header {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 25px;
 }
+
 .imagem {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
     display: flex;
-        }
+}
+
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    alignment-baseline: central;
+    /* alignment-baseline foi removido por não ser válido em layouts flexbox comuns */
 }
 
 .texto1 {
     color: #D4A017;
     font-family: "Comfortaa", sans-serif;
-    font-size: 25px;
+    /* Ajuste Fluido: Mínimo 14px, Ideal 3.5% da tela, Máximo 22px */
+    font-size: clamp(0.875rem, 3.5vw, 1.375rem);
     text-align: center;
-  }
+}
 
 .texto {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    line-height: 50px;
-    font-size: 15px
+    line-height: 1.6; /* Alterado para valor relativo para acompanhar o tamanho da letra */
+    /* Ajuste Fluido: Mínimo 14px, Ideal 3.5% da tela, Máximo 24px */
+    font-size: clamp(0.875rem, 3.5vw, 1.5rem);
 }
+
 .botao {
-    display: inline-block;
     background: #D4A017;
     color: #111111;
     text-decoration: none;
     padding: 15px 35px;
     border-radius: 50px;
-    font-size: 20px;
+    /* Ajuste Fluido: Mínimo 16px, Ideal 4% da tela, Máximo 22px */
+    font-size: clamp(1rem, 4vw, 1.375rem);
     font-weight: bold;
     border: 2px solid #D4A017;
     transition: all 0.3s ease;
-   display: block;
+    display: block;
     width: 250px;
     margin: 0 auto;
-      }
+}
 
-footer{
+footer {
     text-align: center;
     line-height: 50px;
-    font-size: 25px;
+    /* Ajuste Fluido: Mínimo 12px, Ideal 2.5% da tela, Máximo 16px */
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
 }
